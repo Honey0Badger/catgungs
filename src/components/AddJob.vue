@@ -4,30 +4,37 @@
     <div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Кличка</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input v-model="staff.nickname" type="text" class="form-control" id="CatName" aria-describedby="emailHelp">
       </div>
       <div>
         <label for="exampleInputEmail1" class="form-label">Возраст</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
-      <div>
-        <label for="exampleInputEmail1" class="form-label">Порода</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input v-model="staff.age" type="text" class="form-control" id="CatAge" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Окрас</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
+        <label for="exampleInputPassword1" class="form-label">Дата приема</label>
+        <input v-model="staff.dateSJ" type="date" class="form-control" id="AddDate">
       </div>
-      <button class="btn btn-outline-success">Сохранить</button>
+      <button v-on:click="AddJob" class="btn btn-outline-success">Сохранить</button>
     </div>
   </div>
 </template>
 
 <script>
+import Cat from '@/lib/Cat.js'
 export default {
   name: 'AddJob',
   props: {
     msg: String
+  },
+  data(){
+    return{
+      staff:Cat
+    }
+  },
+  methods:{
+    AddJob(){
+      this.$store.commit('addWorker', this.staff)
+    }
   }
 }
 </script>
