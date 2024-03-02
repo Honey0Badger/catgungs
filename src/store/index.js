@@ -12,6 +12,9 @@ export default createStore({
   mutations: {
     addWorker(state, par){
       this.state.workers.push(par)
+    },
+    deleteCat(state, par){
+      state.workers = state.workers.filter(a => a.nickname != par.nickname)
     }
   },
   actions: {
