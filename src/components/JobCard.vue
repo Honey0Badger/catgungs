@@ -6,11 +6,13 @@
         <div class="card-body">
           <h5 class="card-title">{{nickname}}</h5>
           <p class="card-text">
+            Номер: {{id}} <br>
             Возраст: {{age}} <br>
-            Дата приема: {{startDate}}
+            Дата приема: {{startDate}} <br>
+            Место патрулирования: {{street}}
           </p>
           <a href="#" class="btn btn-success">ADD</a>
-          <a href="#" class="btn btn-primary">EDIT</a>
+          <router-link class="btn btn-primary" :to="{name: 'edit', params:{id: id }}">EDIT</router-link>
           <button v-on:click="delCat" type="button" class="btn btn-danger">DEL</button>
         </div>
       </div>
@@ -23,15 +25,17 @@
 
 export default {
   name: 'JobCard',
-  emits:['delete'],
+  emits:['delete', 'edit'],
   props: {
+    id: '',
     nickname: '',
     age: '',
-    startDate: ''
+    startDate: '',
+    street: ''
   },
   methods:{
     delCat(){
-      this.$emit('delete', this.$props.nickname)
+      this.$emit('delete', this.$props.id)
     }
   }
 }
