@@ -7,7 +7,12 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "5": "^0.0.1",
+    "@ckeditor/ckeditor5-build-classic": "^41.2.0",
+    "@ckeditor/ckeditor5-vue": "^5.1.0",
     "bootstrap": "^5.3.2",
+    "ckeditor": "^4.12.1",
+    "install": "^0.13.0",
     "vue": "^3.2.26",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"

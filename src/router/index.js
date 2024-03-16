@@ -1,13 +1,14 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
 import AddJob from '@/components/AddJob.vue'
 import ListStaff from '@/views/ListStaff.vue'
 import JobEdit from '@/components/JobEdit.vue'
+import Editor from '@/components/Editor.vue'
+import Home from '@/components/Home.vue'
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: Home
   },
   {
     path: '/addjob',
@@ -24,6 +25,11 @@ const routes = [
     name: 'edit',
     props: true,
     component: JobEdit
+  },
+  {
+    path: '/editor',
+    name: 'editor',
+    component: Editor
   }
 ]
 
