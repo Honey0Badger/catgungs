@@ -2,6 +2,10 @@
     <div id="app">
         <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
     </div>
+
+    <div class="rows" v-html="editorData">
+
+    </div>
 </template>
 
 <script>
@@ -12,11 +16,16 @@
         data() {
             return {
                 editor: ClassicEditor,
-                editorData: '<p></p>',
+                editorData: '',
                 editorConfig: {
                     // The configuration of the editor.
                 }
             };
+        },
+        computed:{
+            result(){
+
+            }
         }
     }
 </script>
